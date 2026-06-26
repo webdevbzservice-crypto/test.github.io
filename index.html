@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>BZ Dev — O futuro digital do seu negócio</title>
+  <meta name="description" content="BZ Dev é uma empresa de desenvolvimento web fundada pelo Bernardo Henriques e pelo José Menezes. Desenvolvemos plataformas web de alta performance e designs premium que posicionam o seu negócio no topo do mercado digital." />
+  <meta name="keywords" content="desenvolvimento web, design UI UX, SEO, performance web, Portugal, BZ Dev" />
+  <meta name="author" content="BZ Dev" />
+  <meta property="og:title" content="BZ Dev — O futuro digital do seu negócio" />
+  <meta property="og:description" content="Plataformas web de alta performance e designs premium que posicionam o seu negócio no topo do mercado digital." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() { emailjs.init('4qAu91qLzRlLGHzC_'); })();
+  </script>
+
+  <link rel="stylesheet" href="style.css?v=8" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  CANVAS DE PARTÍCULAS AMBIENTAIS                        -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  NAVEGAÇÃO                                              -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <nav id="navbar" aria-label="Navegação principal">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="BZ Dev - Início">
+        <img src="logo.png" alt="BZ Dev Logo" class="logo-img" />
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+        <li><a href="#servicos" class="nav-link">O Nosso Core</a></li>
+        <li><a href="#contacto" class="nav-link nav-cta">Solicitar Orçamento</a></li>
+      </ul>
+      <button type="button" class="hamburger" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu móvel">
+      <ul role="list">
+        <li><a href="#sobre" class="mobile-link">Sobre Nós</a></li>
+        <li><a href="#servicos" class="mobile-link">O Nosso Core</a></li>
+        <li><a href="#contacto" class="mobile-link">Solicitar Orçamento</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  SECÇÃO HERO                                            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="hero" class="hero-section" aria-label="Hero">
+    <div class="hero-bg-wrapper" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none;">
+      <div class="hero-grid-overlay"></div>
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+    </div>
+
+    <div class="hero-content fade-in-up">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Developers · Portugal</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-brand">BZ Dev</span>
+        <span class="hero-divider">—</span>
+        <span class="hero-tagline gradient-text">O futuro digital<br />do seu negócio</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Desenvolvemos plataformas web de <strong>alta performance</strong> e designs premium que posicionam a empresa do seu cliente no <strong>topo do mercado digital</strong>. Código limpo. Resultados reais.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-primary" id="hero-cta-btn">
+          <span>Solicitar Orçamento</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#servicos" class="btn btn-ghost">
+          <span>Ver Serviços</span>
+        </a>
+      </div>
+
+      <div class="hero-stats" role="list" aria-label="Estatísticas">
+        <div class="stat-item" role="listitem">
+          <span class="stat-value">100%</span>
+          <span class="stat-label">Código À Medida</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item" role="listitem">
+          <span class="stat-value">PT</span>
+          <span class="stat-label">Made in Portugal</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item" role="listitem">
+          <span class="stat-value">A+</span>
+          <span class="stat-label">Performance & SEO</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  SECÇÃO SOBRE NÓS / O NOSSO ADN                        -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="sobre" class="section sobre-section" aria-label="Sobre Nós">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-label">O Nosso ADN</span>
+        <h2 class="section-title">Construímos o Futuro.<br /><span class="gradient-text">Linha a Linha.</span></h2>
+        <p class="section-subtitle">Não somos uma agência comum. Somos programadores especialistas que transformam ideias em produtos digitais de excelência.</p>
+      </div>
+
+      <div class="sobre-grid">
+        <!-- Coluna de apresentação -->
+        <div class="sobre-intro fade-in-up">
+          <div class="sobre-card glass-card">
+            <div class="sobre-card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>A BZ Dev</h3>
+            <p>A <strong>BZ Dev</strong> nasceu da paixão pelo código e pela excelência no serviço ao cliente. Somos uma equipa fundada pelo <strong>Bernardo Henriques</strong> e pelo <strong>José Menezes</strong> — um duo complementar que cobre todo o ciclo de um projeto digital, do primeiro contacto à última linha de código.</p>
+            <p>Trabalhamos com negócios locais e digitais em Portugal, construindo soluções personalizadas, limpas e de alta performance — do zero, sem templates, sem atalhos.</p>
+          </div>
+        </div>
+
+        <!-- Founders -->
+        <div class="founders-grid fade-in-up">
+          <div class="founder-card glass-card">
+            <div class="founder-avatar" aria-hidden="true">
+              <span class="avatar-letter">B</span>
+              <div class="avatar-glow"></div>
+            </div>
+            <div class="founder-info">
+              <h3 class="founder-name">Bernardo Henriques</h3>
+              <span class="founder-role">Co-Fundador · Desenvolvimento</span>
+              <p class="founder-desc">Responsável por toda a arquitetura técnica e desenvolvimento. Constrói cada projeto do zero com código limpo, escalável e de alta performance — transformando requisitos em produtos digitais robustos.</p>
+            </div>
+          </div>
+
+          <div class="founder-card glass-card">
+            <div class="founder-avatar founder-avatar-alt" aria-hidden="true">
+              <span class="avatar-letter">J</span>
+              <div class="avatar-glow"></div>
+            </div>
+            <div class="founder-info">
+              <h3 class="founder-name">José Menezes</h3>
+              <span class="founder-role">Co-Fundador · Estratégia &amp; Clientes</span>
+              <p class="founder-desc">O elo entre o cliente e o código. Trabalha diretamente com os clientes para compreender as suas necessidades, alinhar expectativas e garantir que cada detalhe do projeto chega ao desenvolvimento com clareza e propósito.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Valores -->
+        <div class="valores-grid fade-in-up">
+          <div class="valor-item">
+            <div class="valor-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Alta Performance</h4>
+              <p>Sites rápidos como um foguete, otimizados para cada dispositivo.</p>
+            </div>
+          </div>
+          <div class="valor-item">
+            <div class="valor-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+              </svg>
+            </div>
+            <div>
+              <h4>100% À Medida</h4>
+              <p>Cada projeto é único. Nada de templates genéricos ou soluções prontas.</p>
+            </div>
+          </div>
+          <div class="valor-item">
+            <div class="valor-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Foco em Resultados</h4>
+              <p>Construímos para converter. Design bonito que também vende.</p>
+            </div>
+          </div>
+          <div class="valor-item">
+            <div class="valor-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Parceria Real</h4>
+              <p>Tratamos o seu projeto como se fosse nosso. Comunicação direta e transparente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  SECÇÃO SERVIÇOS                                        -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="servicos" class="section servicos-section" aria-label="O Nosso Core">
+    <div class="section-bg-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-label">O Nosso Core</span>
+        <h2 class="section-title">Tudo o que o seu projeto<br /><span class="gradient-text">precisa, integrado.</span></h2>
+        <p class="section-subtitle">Não trabalhamos por partes isoladas. Cada projeto que assumimos engloba, de forma integrada, todas as competências que dominamos — do design ao código, da performance à visibilidade.</p>
+      </div>
+
+      <div class="servicos-grid">
+
+        <!-- Core: UI/UX Design -->
+        <article class="servico-card glass-card fade-in-up" id="core-uiux">
+          <div class="servico-card-glow" aria-hidden="true"></div>
+          <div class="servico-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <div class="servico-number" aria-hidden="true">01</div>
+          <h3 class="servico-title">UI/UX Design Premium</h3>
+          <p class="servico-desc">Interfaces que cativam à primeira vista. Criamos experiências visuais que comunicam autoridade, geram confiança e guiam o utilizador até à conversão — parte integrante de cada projeto que desenvolvemos.</p>
+          <ul class="servico-features" role="list">
+            <li>Design Systems completos</li>
+            <li>Prototipagem interativa</li>
+            <li>Wireframes e mockups HD</li>
+            <li>Motion design & microinterações</li>
+          </ul>
+        </article>
+
+        <!-- Core: Desenvolvimento Web -->
+        <article class="servico-card glass-card fade-in-up" id="core-dev">
+          <div class="servico-card-glow" aria-hidden="true"></div>
+          <div class="servico-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div class="servico-number" aria-hidden="true">02</div>
+          <h3 class="servico-title">Desenvolvimento Web À Medida</h3>
+          <p class="servico-desc">Do briefing ao lançamento. Construímos plataformas web robustas, rápidas e escaláveis, com código limpo e arquitetura pensada para o futuro. Nunca templates — sempre código próprio.</p>
+          <ul class="servico-features" role="list">
+            <li>Sites institucionais & landing pages</li>
+            <li>Plataformas e-commerce</li>
+            <li>Aplicações web personalizadas</li>
+            <li>Integrações com APIs e serviços externos</li>
+          </ul>
+        </article>
+
+        <!-- Core: Performance & SEO -->
+        <article class="servico-card glass-card fade-in-up" id="core-seo">
+          <div class="servico-card-glow" aria-hidden="true"></div>
+          <div class="servico-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/>
+            </svg>
+          </div>
+          <div class="servico-number" aria-hidden="true">03</div>
+          <h3 class="servico-title">Performance & SEO</h3>
+          <p class="servico-desc">Velocidade e visibilidade são requisitos, não extras. Cada projeto que entregamos é otimizado de raiz para os motores de pesquisa e para os mais altos padrões de desempenho técnico.</p>
+          <ul class="servico-features" role="list">
+            <li>Auditoria técnica completa</li>
+            <li>Core Web Vitals otimizados</li>
+            <li>SEO on-page e técnico</li>
+            <li>Relatórios de performance detalhados</li>
+          </ul>
+        </article>
+
+        <!-- Core: Sistemas de Agendamento -->
+        <article class="servico-card glass-card fade-in-up" id="core-agendamento">
+          <div class="servico-card-glow" aria-hidden="true"></div>
+          <div class="servico-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div class="servico-number" aria-hidden="true">04</div>
+          <h3 class="servico-title">Sistemas de Agendamento Web</h3>
+          <p class="servico-desc">Para negócios que precisam de automatizar marcações e gestão de clientes. Desenvolvemos sistemas integrados, personalizados e prontos a escalar — encaixados de forma nativa no projeto.</p>
+          <ul class="servico-features" role="list">
+            <li>Calendário online integrado</li>
+            <li>Notificações automáticas por email/SMS</li>
+            <li>Painel de gestão personalizado</li>
+            <li>Integração com plataformas externas</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <!-- CTA unificado abaixo da grelha -->
+      <div class="servicos-cta-bottom fade-in-up">
+        <p>Cada projeto é desenvolvido com todas estas competências, de forma integrada e personalizada para o seu negócio.</p>
+        <a href="#contacto" class="btn btn-primary" id="servicos-cta-btn">
+          <span>Falar Connosco</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  SECÇÃO CONTACTO                                        -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="contacto" class="section contacto-section" aria-label="Contacto">
+    <div class="contacto-glow contacto-glow-1" aria-hidden="true"></div>
+    <div class="contacto-glow contacto-glow-2" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-label">Vamos Trabalhar Juntos</span>
+        <h2 class="section-title">Inicie a sua<br /><span class="gradient-text">Transformação Digital</span></h2>
+        <p class="section-subtitle">Fale connosco para obter um orçamento exclusivo e personalizado para o seu projeto.</p>
+      </div>
+
+      <div class="contacto-layout">
+        <!-- Info lateral -->
+        <div class="contacto-info fade-in-up">
+          <div class="info-card glass-card">
+            <h3>O futuro do seu negócio<br /><span class="gradient-text">começa aqui.</span></h3>
+            <p>Cada grande projeto começa com uma conversa. Partilhe a sua visão connosco e construímos juntos a presença digital que o seu negócio merece.</p>
+
+            <div class="info-items">
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="info-label">Email</span>
+                  <a href="mailto:webdevbzservice@gmail.com" class="info-value">webdevbzservice@gmail.com</a>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="info-label">Localização</span>
+                  <span class="info-value">Portugal</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="info-label">Resposta</span>
+                  <span class="info-value">Até 24 horas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulário -->
+        <div class="contacto-form-wrapper fade-in-up">
+          <form class="contacto-form glass-card" id="contact-form" novalidate aria-label="Formulário de contacto">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="field-nome">Nome <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="field-nome"
+                  name="nome"
+                  placeholder="O seu nome completo"
+                  required
+                  autocomplete="name"
+                  aria-required="true"
+                />
+              </div>
+              <div class="form-group">
+                <label for="field-empresa">Nome da Empresa</label>
+                <input
+                  type="text"
+                  id="field-empresa"
+                  name="nome_empresa"
+                  placeholder="Nome da sua empresa (opcional)"
+                  autocomplete="organization"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="field-email">Email <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="field-email"
+                  name="email"
+                  placeholder="o-seu-email@exemplo.com"
+                  required
+                  autocomplete="email"
+                  aria-required="true"
+                />
+              </div>
+              <div class="form-group">
+                <label for="field-telemovel">Telemóvel</label>
+                <input
+                  type="tel"
+                  id="field-telemovel"
+                  name="telemovel"
+                  placeholder="+351 9XX XXX XXX"
+                  autocomplete="tel"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="field-mensagem">Mensagem <span class="required" aria-hidden="true">*</span></label>
+              <textarea
+                id="field-mensagem"
+                name="mensagem"
+                placeholder="Descreva o seu projeto ou ideia... Quanto mais detalhes partilhar, mais personalizado será o orçamento."
+                rows="5"
+                required
+                aria-required="true"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+              <span id="btn-text">Enviar Mensagem</span>
+              <span id="btn-loading" class="btn-loading" aria-hidden="true" style="display:none">
+                <svg class="spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+                A enviar...
+              </span>
+            </button>
+
+            <!-- Mensagem de estado do formulário -->
+            <div id="form-status" class="form-status" role="alert" aria-live="polite" style="display:none"></div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  RODAPÉ                                                 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#hero" aria-label="BZ Dev - Voltar ao início">
+            <img src="logo.png" alt="BZ Dev Logo" class="footer-logo" />
+          </a>
+          <p class="footer-tagline">O futuro do seu negócio começa aqui.</p>
+        </div>
+        <div class="footer-links">
+          <nav aria-label="Links do rodapé">
+            <p class="footer-links-title">Navegação</p>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#servicos">O Nosso Core</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+          <nav aria-label="Links legais">
+            <p class="footer-links-title">Legal</p>
+            <a href="politica-privacidade.html">Política de Privacidade</a>
+            <a href="termos-condicoes.html">Termos e Condições</a>
+            <a href="politica-cookies.html">Política de Cookies</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year"></span> BZ Dev. Todos os direitos reservados.</p>
+        <p class="footer-made">Feito com <span class="heart" aria-label="amor">♥</span> em Portugal</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  BANNER DE CONSENTIMENTO DE COOKIES                     -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-describedby="cookie-banner-desc" style="display:none">
+    <div class="cookie-banner-inner">
+      <div class="cookie-banner-header">
+        <div class="cookie-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-.34-.02-.67-.05-1"/>
+            <path d="M12 8v4M12 16h.01"/>
+            <circle cx="18" cy="5" r="2"/><circle cx="21" cy="10" r="1.5"/><circle cx="15" cy="2" r="1.5"/>
+          </svg>
+        </div>
+        <h2 id="cookie-banner-title">Utilizamos cookies</h2>
+      </div>
+
+      <p id="cookie-banner-desc" class="cookie-banner-text">
+        Utilizamos cookies para garantir o funcionamento do website e, com o seu consentimento, para análise de utilização. Pode aceitar todos, rejeitar os não essenciais ou gerir as suas preferências. Consulte a nossa <a href="politica-cookies.html" class="cookie-link">Política de Cookies</a> e a <a href="politica-privacidade.html" class="cookie-link">Política de Privacidade</a>.
+      </p>
+
+      <!-- Painel de preferências (oculto por defeito) -->
+      <div id="cookie-preferences" class="cookie-preferences" style="display:none" aria-hidden="true">
+        <div class="cookie-pref-item">
+          <div class="cookie-pref-info">
+            <strong>Cookies Estritamente Necessários</strong>
+            <span>Essenciais para o funcionamento do website. Não podem ser desativados.</span>
+          </div>
+          <div class="cookie-toggle cookie-toggle--locked" aria-label="Sempre ativo" title="Sempre ativo">
+            <span class="toggle-on">Sempre ativo</span>
+          </div>
+        </div>
+        <div class="cookie-pref-item">
+          <div class="cookie-pref-info">
+            <strong>Cookies de Análise</strong>
+            <span>Permitem-nos compreender como os visitantes utilizam o website, de forma anónima.</span>
+          </div>
+          <label class="cookie-toggle-switch" aria-label="Ativar cookies de análise">
+            <input type="checkbox" id="pref-analytics" />
+            <span class="cookie-toggle-track">
+              <span class="cookie-toggle-thumb"></span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="cookie-banner-actions">
+        <button id="cookie-manage-btn" class="cookie-btn cookie-btn--ghost" type="button" aria-expanded="false" aria-controls="cookie-preferences">
+          Gerir Preferências
+        </button>
+        <button id="cookie-reject-btn" class="cookie-btn cookie-btn--outline" type="button">
+          Rejeitar Não Essenciais
+        </button>
+        <button id="cookie-accept-btn" class="cookie-btn cookie-btn--primary" type="button">
+          Aceitar Todos
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- /BANNER DE COOKIES -->
+
+  <script src="main.js?v=8"></script>
+</body>
+</html>
