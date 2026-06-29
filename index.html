@@ -21,8 +21,18 @@
   <!-- EmailJS SDK -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
-    (function() { emailjs.init('4qAu91qLzRlLGHzC_'); })();
+    (function() {
+      if (typeof emailjs !== 'undefined') {
+        try { emailjs.init('4qAu91qLzRlLGHzC_'); } catch(e) {}
+      }
+    })();
   </script>
+
+  <noscript>
+    <style>
+      .fade-in-up { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 
   <link rel="stylesheet" href="style.css?v=9" />
 </head>
@@ -66,7 +76,7 @@
       <div class="hero-glow hero-glow-2"></div>
     </div>
 
-    <div class="hero-content fade-in-up">
+    <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-dot"></span>
         <span>Developers · Portugal</span>
